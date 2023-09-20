@@ -1,0 +1,21 @@
+name: demo-serverless-ci-cd-workflow
+
+concurrency: 
+  group: default 
+  #cancel-in-progress: true #cancel any currently running job or workflow in the same concurrency group.
+
+on: 
+  workflow_dispatch:
+    inputs:
+      logLevel:
+        description: 'Log level'     
+        required: true
+        type: string
+        default: 'warning'
+
+jobs:
+  continuos_integration_job:
+    uses: ./.github/workflows/demo-serverless-ci-workflow.yaml
+    with:
+      node_version: 18.x
+    secrets: inherit
