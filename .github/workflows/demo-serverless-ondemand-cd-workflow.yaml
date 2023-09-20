@@ -1,4 +1,4 @@
-name: demo-serverless-cd-workflow
+name: demo-serverless-cd-ondemand-workflow
 
 concurrency: 
   group: default 
